@@ -98,6 +98,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: minor
+          WITH_V: true
 
       - name: Deploy
         run: echo "Deploying to staging..."
@@ -123,6 +124,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: major
+          WITH_V: true
 
       - name: Deploy
         run: echo "Deploying to production..."
