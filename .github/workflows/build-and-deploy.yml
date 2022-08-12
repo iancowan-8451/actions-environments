@@ -2,10 +2,16 @@ name: Build and Deploy
 
 on:
   workflow_dispatch:
+    inputs:
+      qa-env:
+        type: choice
+        description: QA environment to deploy to
+        options:
+          - qa-1
+          - qa-2
   push:
     branches:
       - main
-
 
 jobs:
   build:
@@ -14,3 +20,37 @@ jobs:
     steps:
       - name: Build
         run: echo "Building..."
+
+  qa-1:
+    runs-on: ubuntu-latest
+    environment: qa-1
+    if: ${{ github.event.inputs.qa-env == 'qa-1' }} 
+
+    steps:
+      - name: Deploy
+        run: echo "Deploying to qa-1..."
+
+  qa-2:
+    runs-on: ubuntu-latest
+    environment: qa-2
+    if: ${{ github.event.inputs.qa-env == 'qa-2' }} 
+
+    steps:
+      - name: Deploy
+        run: echo "Deploying to qa-2..."
+
+  stag:
+    runs-on: ubuntu-latest
+    environment: stag
+
+    steps:
+      - name: Deploy
+        run: echo "Deploying to staging..."
+
+  prod:
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+      - name: Deploy
+        run: echo "Deploying to production..."
