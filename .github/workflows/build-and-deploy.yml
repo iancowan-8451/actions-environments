@@ -29,13 +29,6 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - name: Check pwd, ls
-        run: |
-          pwd
-          ls
-          echo ${{ github.workspace }}
-          echo ${ GITHUB_WORKSPACE }
-
       - name: Build
         run: echo "Building..."
 
@@ -101,11 +94,6 @@ jobs:
         run: |
           echo "DO NOT use this with a real secret... this is for demonstration purposes only"
           echo ${{ secrets.MESSAGE }}
-
-      - name: Check current directory and contents
-        run: |
-          ls
-          pwd
 
       - name: Bump tag version
         uses: anothrNick/github-tag-action@1.34.0
