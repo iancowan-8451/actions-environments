@@ -1,0 +1,16 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        run: echo "Building..."
