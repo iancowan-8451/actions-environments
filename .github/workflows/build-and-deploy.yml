@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: qa-2
     needs: build
-    if: ${{ contains(github.event.inputs.qa-env, 'qa') }} 
+    if: ${{ ! contains(github.event.inputs.qa-env, 'qa') }} 
 
     steps:
       - name: Deploy
