@@ -24,6 +24,9 @@ jobs:
           echo "DO NOT use this with a real secret... this is for demonstration purposes only"
           echo ${{ secrets.MESSAGE }}
 
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Build
         run: echo "Building..."
 
