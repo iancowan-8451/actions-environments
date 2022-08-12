@@ -26,6 +26,13 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+
+      - name: Check pwd, ls
+        run: |
+          pwd
+          ls
 
       - name: Build
         run: echo "Building..."
