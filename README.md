@@ -5,6 +5,8 @@
 * After deployment to `stag` environment, deployment to `prod` is triggered but requires user interaction before deploying
 * Any branch can be triggered to be deployed to `qa-1` or `qa-2`
 * Whenever a deployment to `qa-1` or `qa-2` is triggered, deployment to `stag` and `prod` is always ignored
+* When deploying to `stag`, the tag "minor" will be bumped (i.e. `v1.0.0` -> `v1.1.0`)
+* When deploying to prod, the tag "major" will be bumped (i.e. `v1.0.0` -> `v2.0.0`)
 
 ### Process for Demo Deploying
 * If you want to deploy to `stag` and `prod`, merge something into `main`
