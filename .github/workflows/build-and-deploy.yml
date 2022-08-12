@@ -33,6 +33,8 @@ jobs:
         run: |
           pwd
           ls
+          echo ${{ github.workspace }}
+          echo ${ GITHUB_WORKSPACE }
 
       - name: Build
         run: echo "Building..."
