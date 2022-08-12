@@ -44,6 +44,7 @@ jobs:
 
     steps:
       - name: Retrieve Artifact
+        uses: actions/download-artifact@v2
         with:
           name: my-build
 
@@ -63,6 +64,7 @@ jobs:
 
     steps:
       - name: Retrieve Artifact
+        uses: actions/download-artifact@v2
         with:
           name: my-build
 
@@ -82,6 +84,7 @@ jobs:
 
     steps:
       - name: Retrieve Artifact
+        uses: actions/download-artifact@v2
         with:
           name: my-build
 
@@ -106,6 +109,7 @@ jobs:
 
     steps:
       - name: Retrieve Artifact
+        uses: actions/download-artifact@v2
         with:
           name: my-build
 
