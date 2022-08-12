@@ -19,6 +19,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Message
+        run: |
+          echo "DO NOT use this with a real secret... this is for demonstration purposes only"
+          echo ${{ secrets.MESSAGE }}
+
       - name: Build
         run: echo "Building..."
 
@@ -29,6 +34,11 @@ jobs:
     if: ${{ github.event.inputs.qa-env == 'qa-1' }} 
 
     steps:
+      - name: Message
+        run: |
+          echo "DO NOT use this with a real secret... this is for demonstration purposes only"
+          echo ${{ secrets.MESSAGE }}
+
       - name: Deploy
         run: echo "Deploying to qa-1..."
 
@@ -39,6 +49,11 @@ jobs:
     if: ${{ github.event.inputs.qa-env == 'qa-2' }} 
 
     steps:
+      - name: Message
+        run: |
+          echo "DO NOT use this with a real secret... this is for demonstration purposes only"
+          echo ${{ secrets.MESSAGE }}
+
       - name: Deploy
         run: echo "Deploying to qa-2..."
 
@@ -49,6 +64,11 @@ jobs:
     if: ${{ ! contains(github.event.inputs.qa-env, 'qa') }} 
 
     steps:
+      - name: Message
+        run: |
+          echo "DO NOT use this with a real secret... this is for demonstration purposes only"
+          echo ${{ secrets.MESSAGE }}
+
       - name: Deploy
         run: echo "Deploying to staging..."
 
@@ -58,5 +78,10 @@ jobs:
     needs: stag
 
     steps:
+      - name: Message
+        run: |
+          echo "DO NOT use this with a real secret... this is for demonstration purposes only"
+          echo ${{ secrets.MESSAGE }}
+
       - name: Deploy
         run: echo "Deploying to production..."
